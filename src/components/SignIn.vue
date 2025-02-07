@@ -1,16 +1,19 @@
+<script lang="ts" setup>
+import { ref } from 'vue'
+import BasicInput from './BasicInput.vue'
+
+const username = ref('')
+const password = ref('')
+</script>
+
 <template>
   <form id="signin">
     <fieldset>
       <legend>Please authenticate</legend>
-      <div>
-        <label for="username">Username or email</label>
-        <input type="text" id="username">
-      </div>
-      <div>
-        <label for="password">Password</label>
-        <input type="password" id="password">
-      </div>
-      <input type="submit" value="Sign in">
+      <BasicInput label="Username or email" type="text" id="username" />
+      <BasicInput label="Password" type="password" id="password" />
     </fieldset>
+
+    <button type="submit">Sign up</button>
   </form>
 </template>
