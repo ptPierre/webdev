@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign up form</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body class="bg-nephritis fg-white">
+  <header>
+    <h1>
+      Welcome to the "Name of your app here"
+    </h1>
+  </header>
+  <main>
+    <header>
+      <label for="signup-radio">Sign up</label>
+      <input type="radio" value="signup" name="formType" id="signup-radio" checked>
+      <label for="signin-radio">Sign in</label>
+      <input type="radio" value="signin" name="formType" id="signin-radio">
+    </header>
+    <form id="signup">
+      <fieldset>
+        <legend class="with-before">Please fill in the form</legend>
+        <div>
+          <label for="username">username</label>
+          <input name="username" type="text" id="username" required>
+        </div>
+        <div>
+          <label for="email">email</label>
+          <input name="email" type="email" id="email" required>
+        </div>
+        <div>
+          <label for="password">password</label>
+          <input name="password" type="password" id="password" required>
+        </div>
+        <button type="submit">Sign up</button>
+      </fieldset>
+    </form>
+    <form id="signin" style="display: none;">
+      <fieldset>
+        <legend>Please authenticate</legend>
+        <div>
+          <label for="username">Username or email</label>
+          <input type="text" id="username">
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" id="password">
+        </div>
+        <input type="submit" value="Sign in">
+      </fieldset>
+    </form>
+  </main>
+  <script src="main.js" type="module"></script>
+</body>
+</html>
