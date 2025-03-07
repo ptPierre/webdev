@@ -1,12 +1,39 @@
 import { signUp } from "./signup.js"
 import { signIn } from "./signin.js"
-
-import { ref, computed, createApp } from 'vue'
-
-
+import SignUp from './components/SignUp.vue';
+import SignIn from './components/SignIn.vue';
 import App from './App.vue'
 
+import { createRouter, createWebHistory } from "vue-router"
+import { ref, computed, createApp } from 'vue'
+import 'uno.css'
+import '@una-ui/preset/una.css'
+
+const routes = [
+  {
+    name: 'Home',
+    path: '/',
+    redirect: '/signin'
+  },
+  {
+    name: 'SignIn',
+    path: '/signin',
+    component: SignIn
+  },
+  {
+    name: 'SignUp',
+    path: '/signup',
+    component: SignUp
+  },
+]
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+})
+
 createApp(App)
+  .use(router)
   .mount('#app')
 
 // const radioButtons = document.querySelectorAll('[name="formType"]')
